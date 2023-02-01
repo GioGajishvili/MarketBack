@@ -12,10 +12,9 @@ exports.get = (req, res) => {
 };
 
 exports.post = (req, res) => {
-  const { firstName, lastName, email, passwordHash } = req.body;
+  const { username, email, passwordHash } = req.body;
   const user = new User({
-    firstName: firstName,
-    lastName: lastName,
+    username: username,
     email: email,
     passwordHash: passwordHash,
   });

@@ -12,11 +12,13 @@ exports.get = (req, res) => {
 };
 
 exports.post = (req, res) => {
-  const { username, email, passwordHash } = req.body;
+  const { username, email, passwordHash, test, testString } = req.body;
   const user = new User({
     username: username,
     email: email,
     passwordHash: passwordHash,
+    test: test,
+    testString: testString,
   });
 
   user.save();

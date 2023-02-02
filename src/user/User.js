@@ -6,6 +6,8 @@ var UserSchema = new Schema(
     username: { type: String },
     email: { type: String },
     passwordHash: { type: String },
+    test: { type: Number },
+    testString: { type: String },
     isEnabled: { type: Boolean, default: true },
   },
   { collection: "User", strict: true }

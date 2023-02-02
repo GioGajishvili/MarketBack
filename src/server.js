@@ -6,7 +6,9 @@ const options = require("./admin.options");
 const { default: AdminBro } = require("admin-bro");
 const { buildRouter } = require("admin-bro-expressjs");
 var userRoutes = require("./user/routes");
+var productRoutes = require("./product/routes");
 var cors = require("cors");
+
 const app = express();
 
 mongoConnect(() => {
@@ -18,6 +20,7 @@ mongoConnect(() => {
   app.use(cors());
 
   userRoutes(app);
+  productRoutes(app);
 
   app.listen(8000, () => {
     console.log("listening on port 8000");
